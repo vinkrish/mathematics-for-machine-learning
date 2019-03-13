@@ -47,6 +47,8 @@ nav:
       - Course Resources: multivariate_calculus/course_resources.md
       - Week 1: multivariate_calculus/week_1.md
       - Week 2: multivariate_calculus/week_2.md
+    - PCA:
+      - Course Resources: pca/course_resources.md
 
 markdown_extensions:
     - pymdownx.arithmatex
