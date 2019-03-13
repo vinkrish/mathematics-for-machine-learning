@@ -1,0 +1,1056 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://johngiorgi.github.io/mathematics-for-machine-learning/multivariate_calculus/week_2/">
+      
+      
+        <meta name="author" content="John Giorgi">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Week 2 - Mathematics for Machine Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#week-2-multivariate-calculus" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://johngiorgi.github.io/mathematics-for-machine-learning/" title="Mathematics for Machine Learning" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Mathematics for Machine Learning
+              </span>
+              <span class="md-header-nav__topic">
+                Week 2
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/JohnGiorgi/mathematics-for-machine-learning/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      JohnGiorgi/mathematics-for-machine-learning
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://johngiorgi.github.io/mathematics-for-machine-learning/" title="Mathematics for Machine Learning" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Mathematics for Machine Learning
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/JohnGiorgi/mathematics-for-machine-learning/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      JohnGiorgi/mathematics-for-machine-learning
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Linear Algebra
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Linear Algebra
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear_algebra/course_resources/" title="Course Resources" class="md-nav__link">
+      Course Resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear_algebra/week_1/" title="Week 1" class="md-nav__link">
+      Week 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear_algebra/week_2/" title="Week 2" class="md-nav__link">
+      Week 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear_algebra/week_3/" title="Week 3" class="md-nav__link">
+      Week 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear_algebra/week_4/" title="Week 4" class="md-nav__link">
+      Week 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear_algebra/week_5/" title="Week 5" class="md-nav__link">
+      Week 5
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Multivariate Calculus
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Multivariate Calculus
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../course_resources/" title="Course Resources" class="md-nav__link">
+      Course Resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../week_1/" title="Week 1" class="md-nav__link">
+      Week 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Week 2
+      </label>
+    
+    <a href="./" title="Week 2" class="md-nav__link md-nav__link--active">
+      Week 2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moving-to-multivariate" title="Moving to multivariate" class="md-nav__link">
+    Moving to multivariate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-constants-context" title="Variables, constants &amp; context" class="md-nav__link">
+    Variables, constants &amp; context
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-the-perspective-of-the-driver" title="From the perspective of the driver" class="md-nav__link">
+    From the perspective of the driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-designer" title="Car designer" class="md-nav__link">
+    Car designer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusions" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differentiate-with-respect-to-anything" title="Differentiate with respect to anything" class="md-nav__link">
+    Differentiate with respect to anything
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusions_1" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jacobians-vectors-of-derivatives" title="Jacobians - vectors of derivatives" class="md-nav__link">
+    Jacobians - vectors of derivatives
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-jacobian" title="The Jacobian" class="md-nav__link">
+    The Jacobian
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusions_2" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jacobian-applied" title="Jacobian applied" class="md-nav__link">
+    Jacobian applied
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusions_3" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moving-to-multivariate" title="Moving to multivariate" class="md-nav__link">
+    Moving to multivariate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-constants-context" title="Variables, constants &amp; context" class="md-nav__link">
+    Variables, constants &amp; context
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-the-perspective-of-the-driver" title="From the perspective of the driver" class="md-nav__link">
+    From the perspective of the driver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-designer" title="Car designer" class="md-nav__link">
+    Car designer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusions" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differentiate-with-respect-to-anything" title="Differentiate with respect to anything" class="md-nav__link">
+    Differentiate with respect to anything
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusions_1" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jacobians-vectors-of-derivatives" title="Jacobians - vectors of derivatives" class="md-nav__link">
+    Jacobians - vectors of derivatives
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-jacobian" title="The Jacobian" class="md-nav__link">
+    The Jacobian
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusions_2" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jacobian-applied" title="Jacobian applied" class="md-nav__link">
+    Jacobian applied
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusions_3" title="Conclusions" class="md-nav__link">
+    Conclusions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/JohnGiorgi/mathematics-for-machine-learning/edit/master/docs/multivariate_calculus/week_2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="week-2-multivariate-calculus">Week 2: Multivariate calculus</h1>
+<p>Building on the foundations of the previous module, we can now generalize our calculus tools to handle multivariable systems. This means we can take a function with multiple inputs and determine the influence of each of them separately. It would not be unusual for a machine learning method to require the analysis of a function with thousands of inputs, so we will also introduce the linear algebra structures necessary for storing the results of our multivariate calculus analysis in an orderly fashion.</p>
+<p><em>Learning Objectives</em></p>
+<ul>
+<li>Recognize that differentiation can be applied to multiple variables in an equation.</li>
+<li>Use multivariate calculus tools on example equations.</li>
+<li>Recognize the utility of vector/matrix structures in multivariate calculus.</li>
+<li>Examine two dimensional problems using the Jacobian.</li>
+</ul>
+<h2 id="moving-to-multivariate">Moving to multivariate</h2>
+<p>Welcome to module two. If you're comfortable with the concept of differentiation, then in many ways, everything we add from here will just be extensions of this core idea, as well as some interesting applications.</p>
+<p>The title of this course is <em>Multivariate</em> Calculus, so you won't be surprised to hear that we are now going to generalize the concept of gradients to <em>multivariable</em> systems. With more than one variable to play with, we will now be able to use calculus to help us navigate around high-dimensional spaces.</p>
+<details class="note"><summary>Note</summary><p>The words multi<strong>variable</strong> and multi<strong>variate</strong> are typically used interchangeably. There is, however, a subtle difference between these two terms, which is related to whether there are multiple <em>input</em> variables or multiple <em>output</em> variables or <em>both</em>. Typically, we use multi<strong>variate</strong>: when multiple outcome variables exists (outputs); and multi<strong>variable</strong>: when multiple explanatory variables exist (inputs).</p></details><h3 id="variables-constants-context">Variables, constants &amp; context</h3>
+<p>In the first module, we started by trying to develop a strong visual intuition relating derivatives to the gradient of a function at each point. We then followed this up by describing four handy rules to help speed up the process of finding derivatives (<a href="https://en.wikipedia.org/wiki/Sum_rule_in_differentiation">sum rule</a>, <a href="https://en.wikipedia.org/wiki/Power_rule">power rule</a>, <a href="https://en.wikipedia.org/wiki/Product_rule">product rule</a>, and <a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a>). However, all of the examples we looked at were for systems involving a <em>single</em> variable. We are now going to have to see what happens when we apply the same idea to systems with many variables, known as <strong>multivariate systems</strong>. Before we do that, we need to talk about what a variable is in the first place.</p>
+<p>Previously, we've shown examples of problems where one of the variables is a function of the other i.e., <span><span class="MathJax_Preview">y = f(x)</span><script type="math/tex">y = f(x)</script></span>, but where it wouldn't necessarily make sense to say that <span><span class="MathJax_Preview">x = g(y)</span><script type="math/tex">x = g(y)</script></span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>A vehicles speed is clearly a function of time, as in each time the vehicle can only have one speed. However, we can not say that time was a function of the vehicles speed, as there might be multiple times at which the vehicle was traveling any given speed. This is why we typically refer to the speed as a <em>dependent</em> variable, as it depends on time. Conversely, time can be thought of as an <em>independent</em> variable in this particular context.</p>
+</div>
+<p>Typically, when you first learn calculus, you take functions containing variables and constants and then differentiate the <a href="https://en.wikipedia.org/wiki/Dependent_and_independent_variables">dependent variables</a>, such as speed, with respect to <a href="https://en.wikipedia.org/wiki/Dependent_and_independent_variables">independent variables</a>, like time. However, what gets labelled as a constant or a variable can be subtler than you might think and will require you to understand the context of the problem being described. Let's continue using the example of a car to see how this might come up.</p>
+<p>Consider the following (highly simplified) expression,</p>
+<div>
+<div class="MathJax_Preview">F = ma + dv^2</div>
+<script type="math/tex; mode=display">F = ma + dv^2</script>
+</div>
+<p>Relating the force <span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> generated by a car's engine to its mass <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>, acceleration <span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>, aerodynamic drive <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>, and velocity <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>. Which variables are constant, which variables are independent and which variables are dependent depends on context!</p>
+<h4 id="from-the-perspective-of-the-driver">From the perspective of the driver</h4>
+<p>The cars speed and acceleration can be changed by pressing the accelerator pedal to adjust the force, but the mass and the drag are fixed features of the car's design. Therefore, in this context, we would call the force an <em>independent</em> variable, but speed and acceleration <em>dependent</em> variables as they are consequences of the applied force. Additionally, the mass and drag coefficients are clearly <em>constants</em>.</p>
+<h4 id="car-designer">Car designer</h4>
+<p>If you are the cars designer looking to design each engine size in a new fleet, perhaps settle on a specific acceleration-speed target. In this context, while your force is still the <em>independent</em> variable, speed and acceleration are <em>constants</em>. Additionally the mass and drag have become variables which you can adjust by redesigning your car.</p>
+<p>We refer to these slightly confusing variable design constants as <a href="https://en.wikipedia.org/wiki/Parameter">parameters</a>. The key takeaway here is that you can, in principle, differentiate any term with respect to any other. So don't get caught off guard when things you thought were constants suddenly start to vary. Let's now look at a different example.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We often think of varying parameters as exploring a family of similar functions rather than describing them as variables in their own right.</p>
+</div>
+<p>Imagine that you wanted to manufacture a metal can. You need to understand the relationship between the various key design parameters. We can start by writing a reasonable approximation for the can's empty mass <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> by breaking the area down into pieces.</p>
+<p>The circles on top and bottom are <span><span class="MathJax_Preview">\pi r^2</span><script type="math/tex">\pi r^2</script></span> each. When we unroll the body we get a rectangle where the width must be the same as the circumference of the circle i.e. <span><span class="MathJax_Preview">2 \pi r</span><script type="math/tex">2 \pi r</script></span>. Finally, call the height <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span>. Taking these areas and multiplying them by a thickness <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, we get the total volume of metal in the can.</p>
+<div>
+<div class="MathJax_Preview">v = 2 \pi r^2 t + 2 \pi r h t</div>
+<script type="math/tex; mode=display">v = 2 \pi r^2 t + 2 \pi r h t</script>
+</div>
+<p><img alt="" src="../../img/volume_of_can.png" /></p>
+<p>Finally, multiplying this by the metal's density <span><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span>, we get its mass</p>
+<div>
+<div class="MathJax_Preview">m = 2 \pi r^2 t \rho + 2 \pi r h t \rho</div>
+<script type="math/tex; mode=display">m = 2 \pi r^2 t \rho + 2 \pi r h t \rho</script>
+</div>
+<p>At this point, what should we label as a constant or a variable? Well, with the exception of <span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span> (which is definitely a constant for this universe) it's not entirely clear. We could in principle change any of the radius, the height, the wall thickness, or even the material's density. Lets do that, by calculating the derivative of the cans mass with respect to any of these variables. To calculate these <a href="https://en.wikipedia.org/wiki/Partial_derivative">partial derivatives</a> (as they are called) all we do is differentiate with respect to a certain variable and consider all of the others to behave as constants.</p>
+<p>Starting with an easy one, let's try <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span></p>
+<div>
+<div class="MathJax_Preview">\frac{\partial m}{\partial h} = 2 \pi r \rho</div>
+<script type="math/tex; mode=display">\frac{\partial m}{\partial h} = 2 \pi r \rho</script>
+</div>
+<p>As the first term did not contain the variable <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span> (and we're treating all the other terms as constants) the partial deriviative just gives us the contants of the second term multiplied by the derivative of <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span>. As we can see from this expression, the partial derivative of <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> with respect to <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span> no longer contains <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span>, which is what we'd expect as the mass will vary linearly with the height when all else is kept constant. Notice that instead of using the normal <span><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> that we saw in last module, we must use the curly partial symbol (<span><span class="MathJax_Preview">\partial</span><script type="math/tex">\partial</script></span>) which signifies that you've differentiated a function of more than one variable.</p>
+<p>Let's now find the partial derivative with respect to the other variables, starting with <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>,</p>
+<div>
+<div class="MathJax_Preview">\frac{\partial m}{\partial r} = 4 \pi r t \rho + 2 \pi h t \rho</div>
+<script type="math/tex; mode=display">\frac{\partial m}{\partial r} = 4 \pi r t \rho + 2 \pi h t \rho</script>
+</div>
+<p>then <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>,</p>
+<div>
+<div class="MathJax_Preview">\frac{\partial m}{\partial t} = 2 \pi r^2 \rho + 2 \pi r h \rho</div>
+<script type="math/tex; mode=display">\frac{\partial m}{\partial t} = 2 \pi r^2 \rho + 2 \pi r h \rho</script>
+</div>
+<p>and finally, <span><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span></p>
+<div>
+<div class="MathJax_Preview">\frac{\partial m}{\partial \rho} = 2 \pi r^2 t + 2 \pi r h t</div>
+<script type="math/tex; mode=display">\frac{\partial m}{\partial \rho} = 2 \pi r^2 t + 2 \pi r h t</script>
+</div>
+<p>Although this is quite a straightforward example, that's basically it for partial differentiation. It's no more complicated than the univariate calculus we met last module. The only difference being that you have to be careful to keep track of what you are considering to be held constant when you take each derivative.</p>
+<h4 id="conclusions">Conclusions</h4>
+<p>I hope this short introduction to multivariate calculus has helped you see that this concept is nothing to be intimidated by. Partial differentiation is essentially just taking a multi dimensional problem and pretending that it's just a standard 1D problem when we consider each variable separately. I look forward to showing you the pretty amazing things that we can use this concept for later in the module.</p>
+<h3 id="differentiate-with-respect-to-anything">Differentiate with respect to anything</h3>
+<p>We've already seen how to think about partial differentiation as just a simple extension of the single variable method that we derived in the last module. In this section, we're going to explore some slightly more complicated partial differential examples and we're also going to build something called the <a href="https://en.wikipedia.org/wiki/Total_derivative"><strong>total derivative</strong></a> of a function. Let's dive straight in.</p>
+<p>Consider the function,</p>
+<div>
+<div class="MathJax_Preview">f(x,y,z) = sin(x) e^{yz^2}</div>
+<script type="math/tex; mode=display">f(x,y,z) = sin(x) e^{yz^2}</script>
+</div>
+<p>Lets first find the derivatives with respect to each of these three variables,</p>
+<div>
+<div class="MathJax_Preview">\frac{\partial f}{\partial x} = \cos(x)e^{yz^2}</div>
+<script type="math/tex; mode=display">\frac{\partial f}{\partial x} = \cos(x)e^{yz^2}</script>
+</div>
+<div>
+<div class="MathJax_Preview">\frac{\partial f}{\partial y} = \sin(x)e^{yz^2}z^2</div>
+<script type="math/tex; mode=display">\frac{\partial f}{\partial y} = \sin(x)e^{yz^2}z^2</script>
+</div>
+<div>
+<div class="MathJax_Preview">\frac{\partial f}{\partial z} = \sin(x)e^{yz^2}2yz</div>
+<script type="math/tex; mode=display">\frac{\partial f}{\partial z} = \sin(x)e^{yz^2}2yz</script>
+</div>
+<p>So, now that we have these three partial derivatives, we are going to introduce a new idea called the <a href="https://en.wikipedia.org/wiki/Total_derivative">total derivative</a>. Imagine that the variables <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>, and <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> were actually themselves a function of a single other parameter, <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, where <span><span class="MathJax_Preview">x = t-1</span><script type="math/tex">x = t-1</script></span>, <span><span class="MathJax_Preview">y = t^2</span><script type="math/tex">y = t^2</script></span> and <span><span class="MathJax_Preview">z = \frac{1}{t}</span><script type="math/tex">z = \frac{1}{t}</script></span>. What we're looking for is the derivative of <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> with respect to <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>. In this simple case, we could just substitute for all our three variables directly in terms of <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, simplify a little bit and then differentiate directly with respect to <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, which gives us, <span><span class="MathJax_Preview">\cos(t-1)e</span><script type="math/tex">\cos(t-1)e</script></span>. However, in a more complicated scenario with many variables, the expression we needed to differentiate might become unmanageably complex. The alternative approach is to once again use the logic of chain rule to solve this problem, where the derivative with respect to a new variable, <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, is the sum of the chains of the other three variable. As shown in this expression,</p>
+<div>
+<div class="MathJax_Preview">\frac{df(x,y,z)}{dt} = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt} + \frac{\partial f}{\partial z}\frac{dz}{dt}</div>
+<script type="math/tex; mode=display">\frac{df(x,y,z)}{dt} = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt} + \frac{\partial f}{\partial z}\frac{dz}{dt}</script>
+</div>
+<p>Since we've already got our three partial derivatives of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> with respect to <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> and <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span>, we just need to find the derivatives of the three variables with respect to <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>, and we'll have all the things we need to evaluate our expression.</p>
+<div>
+<div class="MathJax_Preview">\frac{dx}{dt} = 1</div>
+<script type="math/tex; mode=display">\frac{dx}{dt} = 1</script>
+</div>
+<div>
+<div class="MathJax_Preview">\frac{dx}{dy} = 2t</div>
+<script type="math/tex; mode=display">\frac{dx}{dy} = 2t</script>
+</div>
+<div>
+<div class="MathJax_Preview">\frac{dx}{dz} = -t^{-2}</div>
+<script type="math/tex; mode=display">\frac{dx}{dz} = -t^{-2}</script>
+</div>
+<p>Nothing hugely complicated here. However, when we then sub into our total derivative expression, the expression is a bit of a monster,</p>
+<div>
+<div class="MathJax_Preview">\frac{df(x,y,z)}{dt} = (cos(x)e^{yz^2})(1) + (\sin(x)e^{yz^2}z^2)(2t) + (\sin(x)e^{yz^2}2yz)(-t^{-2})</div>
+<script type="math/tex; mode=display">\frac{df(x,y,z)}{dt} = (cos(x)e^{yz^2})(1) + (\sin(x)e^{yz^2}z^2)(2t) + (\sin(x)e^{yz^2}2yz)(-t^{-2})</script>
+</div>
+<p>However, after substituting for <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> and <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> all in terms of <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> and then simplifying again, we can see that the second and third terms are the same, just with opposite sign, and so they will cancel each other out (left as an exercise!).  Then kind of amazingly, we arrive at the same result as we saw at the beginning of the lecture</p>
+<div>
+<div class="MathJax_Preview">\frac{df(x,y,z)}{dt} = \cos(t-1)e</div>
+<script type="math/tex; mode=display">\frac{df(x,y,z)}{dt} = \cos(t-1)e</script>
+</div>
+<h4 id="conclusions_1">Conclusions</h4>
+<p>Hopefully you are feeling reasonably comfortable with partial differentiation, and maybe you can even see why the total derivative function might be quite handy. We now have all the pieces that for us to the build our partial derivatives into something really useful.</p>
+<h2 id="jacobians-vectors-of-derivatives">Jacobians - vectors of derivatives</h2>
+<p>Previously, we saw that we can differentiate functions of multiple variables and that it isn't much harder than the univariate calculus we met at the start of the course. In this section, we're going to introduce the <a href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant"><strong>Jacobian</strong></a>, which brings in some of the ideas from linear algebra to build these partial derivatives into something particularly useful.</p>
+<h3 id="the-jacobian">The Jacobian</h3>
+<p>The concept of the <strong>Jacobian</strong> can be applied to a variety of different problems. But in the context of getting started with optimization and machine learning, there is a particular scenario that comes up a lot, which is the Jacobian of a <em>single function</em> of <em>many variables</em>. In short, if you have a function of many variables i.e., <span><span class="MathJax_Preview">f(x1, x2, x3, ...)</span><script type="math/tex">f(x1, x2, x3, ...)</script></span> then the Jacobian is simply a vector where each entry is the partial derivative of <span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> with respect to each one of those variables in turn. By convention, we write this as a row vector rather than a column vector, for reasons that will become clear later in the course</p>
+<div>
+<div class="MathJax_Preview">J = [\frac{\partial f}{x_1}, \frac{\partial f}{x_2}, \frac{\partial f}{x_3}, ...]</div>
+<script type="math/tex; mode=display">J = [\frac{\partial f}{x_1}, \frac{\partial f}{x_2}, \frac{\partial f}{x_3}, ...]</script>
+</div>
+<p>Let's start by looking at a nice simple function</p>
+<div>
+<div class="MathJax_Preview">f(x, y, z) = x^2y + 3z</div>
+<script type="math/tex; mode=display">f(x, y, z) = x^2y + 3z</script>
+</div>
+<p>to build the Jacobian, we just find each of the partial derivatives of the function one by one</p>
+<div>
+<div class="MathJax_Preview">\frac{df}{dx} = 2xy</div>
+<script type="math/tex; mode=display">\frac{df}{dx} = 2xy</script>
+</div>
+<div>
+<div class="MathJax_Preview">\frac{df}{dy} = x^2</div>
+<script type="math/tex; mode=display">\frac{df}{dy} = x^2</script>
+</div>
+<div>
+<div class="MathJax_Preview">\frac{df}{dz} = 3</div>
+<script type="math/tex; mode=display">\frac{df}{dz} = 3</script>
+</div>
+<p>Now bringing all of those together, we end up with a Jacobian <span><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span></p>
+<div>
+<div class="MathJax_Preview">J = [2xy, x^2, 3]</div>
+<script type="math/tex; mode=display">J = [2xy, x^2, 3]</script>
+</div>
+<p>We now have an algebraic expression for a vector which when we give it a specific <span><span class="MathJax_Preview">x, y, z</span><script type="math/tex">x, y, z</script></span> coordinate, will return a vector pointing in the direction of steepest slope of this function. For example, at the point <span><span class="MathJax_Preview">(0, 0, 0)</span><script type="math/tex">(0, 0, 0)</script></span>,</p>
+<div>
+<div class="MathJax_Preview">J(0, 0, 0) = [0, 0, 3]</div>
+<script type="math/tex; mode=display">J(0, 0, 0) = [0, 0, 3]</script>
+</div>
+<p>so our Jacobian is a vector of length 3 pointing directly in the <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> direction.</p>
+<p>Some of the numerical methods that we will discuss later in this course require us to calculate Jacobians in hundreds of dimensions. However, even for the 3D example we just solved, graphical representation is already quite difficult. We are now going to drop down to 2 dimensions so that we can actually see what's going on here. To keep things interesting, we're going to look at a particularly complicated but rather attractive function</p>
+<p><img alt="" src="../../img/jacobians_1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though it is a bit of a monster, I hope you would agree that with the tools we've seen so far, we really could calculate the partial derivatives of this thing. But you wouldn't really learn anything new from grinding through this. Instead, we will look at the results graphically.</p>
+</div>
+<p>Here is that same function, with the <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> axis horizontal, the <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> axis vertical and a color map indicating the value of <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span>, with the bright region suggesting high values and the dark region suggesting low values</p>
+<p><img alt="" src="../../img/jacobians_2.png" /></p>
+<p>Although this plot is fairly clear, our intuition about the gradient is a bit lacking in this format. So let's briefly make things 3D, where the values of <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> and now also represented by the height.</p>
+<p><img alt="" src="../../img/jacobian_1.gif" /></p>
+<p>As we said at the start of the video, the Jacobian is simply a vector that we can calculate for each location on this plot which points in the direction of the <em>steepest uphill slope</em>. Furthermore, the <em>steeper the slope</em>, the <em>greater the magnitude of Jacobian at that point</em>. Hold the image of this 3D space in your mind as we now go back to 2D. Rather than showing all of the grid points I used to plot the graph, lets instead convert to a contour plot, where just like a map of actual mountains, we will draw lines along the regions of the same height (which for us means the same value of <span><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span>).</p>
+<p><img alt="" src="../../img/jacobians_3.png" /></p>
+<p>This removes a lot of the clutter from the plot which is useful for the final step that I'd like to show you, which will be adding lots of Jacobian vectors on top of our contour plot. However, before I do that, let's take a look at these four points and see if your intuition is now in tune by guessing which one will have the Jacobian with the largest magnitude.</p>
+<p><img alt="" src="../../img/jacobians_4.png" /></p>
+<p>Overlaying the Jacobian vector field, we can see that they are clearly all pointing uphill, away from the low dark regions and towards the high bright regions</p>
+<p><img alt="" src="../../img/jacobians_5.png" /></p>
+<p>Also, we see that where the contour lines are tightly packed, this is where we find our largest Jacobian vectors such as at point A. Whereas the peaks of the mountains and in the bottom of the valleys or even out on a wide flat plains, our gradients, and therefore our Jacobians are small.</p>
+<h4 id="conclusions_2">Conclusions</h4>
+<p>My hope is that this clear two-dimensional example will give you the confidence to trust the maths when we come up against much higher dimensional problems later in the course. See you then.</p>
+<h3 id="jacobian-applied">Jacobian applied</h3>
+<p>In this section, we're going to extend the concept of the Jacobian, from vectors up to matrices, which will allow us to describe the rates of change of a vector valued function. However, before we do this, we are first going to recap by applying what we've learned so far about Jacobians, to another simple system.</p>
+<p>If we consider the function</p>
+<div>
+<div class="MathJax_Preview">f(x,y) = e^{-(x^2 + y^2)}</div>
+<script type="math/tex; mode=display">f(x,y) = e^{-(x^2 + y^2)}</script>
+</div>
+<p>then using our knowledge of partial differentiation, it's fairly straightforward to find its Jacobian vector</p>
+<div>
+<div class="MathJax_Preview">J = [-2xe^{-(x^2+y^2)}, -2ye^{-(x^2+y^2)}]</div>
+<script type="math/tex; mode=display">J = [-2xe^{-(x^2+y^2)}, -2ye^{-(x^2+y^2)}]</script>
+</div>
+<p>We're now going to do the reverse of our approach from the last section and start by looking at the vector field in the Jacobians, and then see if we can understand how the function must look. Let's start by finding the Jacobian at a few specific points.</p>
+<p>Firstly, the point <span><span class="MathJax_Preview">(-1, 1)</span><script type="math/tex">(-1, 1)</script></span> which we'll highlight on our axis in pink. Substituting these coordinates into our Jacobian expression and simplifying, we can see a vector pointing directly towards the origin. Next, if we move further out to the point <span><span class="MathJax_Preview">(2, 2)</span><script type="math/tex">(2, 2)</script></span> and find the Jacobian, we are now going to get a much smaller vector but pointing once again directly at the origin Lastly, before I reveal the whole vector field, let's look at what's going on at the origin itself. Subbing in the point <span><span class="MathJax_Preview">(0, 0)</span><script type="math/tex">(0, 0)</script></span> returns the zero vector, suggesting that the function is flat at this point, which must mean one of three things. Either, this point is a maximum, minimum, or something called a saddle, which we'll cover later in this module</p>
+<p><img alt="" src="../../img/jacobians_6.png" /></p>
+<p>However, if we now reveal the rest of the Jacobian vector field, it becomes clear that the origin must be the maximum of this system</p>
+<p><img alt="" src="../../img/jacobians_7.png" /></p>
+<p>Let's now move back to the colour map representation of this function, where the brighter regions represent high values of f. So, finally, we can remove the vector field and observe the function in 3D, which I hope matches up with your expectations.</p>
+<p><img alt="" src="../../img/jacobians_2.gif" /></p>
+<p>Next, we're going to build a Jacobian matrix which describes functions that take a vector as an input, but unlike our previous examples, <em>also give a vector as the output</em>. If we consider the two functions,</p>
+<div>
+<div class="MathJax_Preview">u(x,y) = x - 2y</div>
+<script type="math/tex; mode=display">u(x,y) = x - 2y</script>
+</div>
+<div>
+<div class="MathJax_Preview">v(x,y) = 3y - 2x</div>
+<script type="math/tex; mode=display">v(x,y) = 3y - 2x</script>
+</div>
+<p>we can think of these as two vector spaces, one containing vectors with coordinates in <span><span class="MathJax_Preview">u, v</span><script type="math/tex">u, v</script></span> and the other with coordinates in <span><span class="MathJax_Preview">x, y</span><script type="math/tex">x, y</script></span>, i.e., each point in <span><span class="MathJax_Preview">x, y</span><script type="math/tex">x, y</script></span> has a corresponding location in <span><span class="MathJax_Preview">u, v</span><script type="math/tex">u, v</script></span>. As we move around <span><span class="MathJax_Preview">x, y</span><script type="math/tex">x, y</script></span> space, we would expect our corresponding path in <span><span class="MathJax_Preview">u, v</span><script type="math/tex">u, v</script></span> space to be quite different,</p>
+<p><img alt="" src="../../img/jacobians_3.gif" /></p>
+<p>We can of course, make separate row vector Jacobians for <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> and <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>. However, as we are considering <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> and <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> to be components of a single vector, it makes more sense to extend our Jacobian by stacking these vectors as rows of a matrix like this</p>
+<div>
+<div class="MathJax_Preview">J_u = \begin{bmatrix} \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y} \end{bmatrix}</div>
+<script type="math/tex; mode=display">J_u = \begin{bmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \end{bmatrix}</script>
+</div>
+<div>
+<div class="MathJax_Preview">J_v = \begin{bmatrix} \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y} \end{bmatrix}</div>
+<script type="math/tex; mode=display">J_v = \begin{bmatrix} \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y} \end{bmatrix}</script>
+</div>
+<div>
+<div class="MathJax_Preview">J = \begin{bmatrix} \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}\end{bmatrix}</div>
+<script type="math/tex; mode=display">J = \begin{bmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}\end{bmatrix}</script>
+</div>
+<p>Now that we have the structure and motivation for building a Jacobian matrix for vector valued functions, let's apply this to our example functions and see what we get. We have</p>
+<div>
+<div class="MathJax_Preview">u(x, y) = x - 2y</div>
+<script type="math/tex; mode=display">u(x, y) = x - 2y</script>
+</div>
+<div>
+<div class="MathJax_Preview">v(x,y) = 3y - 2x</div>
+<script type="math/tex; mode=display">v(x,y) = 3y - 2x</script>
+</div>
+<p>We can build the Jacobian from these two, by simply saying well, the Jacobian is going to be,</p>
+<div>
+<div class="MathJax_Preview">J = \begin{bmatrix} \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}\end{bmatrix}</div>
+<script type="math/tex; mode=display">J = \begin{bmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}\end{bmatrix}</script>
+</div>
+<div>
+<div class="MathJax_Preview"> = \begin{bmatrix} 1 &amp; -2 \\ -2 &amp; 3\end{bmatrix}</div>
+<script type="math/tex; mode=display"> = \begin{bmatrix} 1 & -2 \\ -2 & 3\end{bmatrix}</script>
+</div>
+<p>Our Jacobian matrix no longer even contains any variables, which is what we should expect when we consider that clearly, both <span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> and <span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> are linear functions of <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>. So the gradient must be constant everywhere. Also, this matrix is just the linear transformation from <span><span class="MathJax_Preview">xy</span><script type="math/tex">xy</script></span> space to <span><span class="MathJax_Preview">uv</span><script type="math/tex">uv</script></span> space. So, if we were to apply the <span><span class="MathJax_Preview">xy</span><script type="math/tex">xy</script></span> vector two three, we'd get the following,</p>
+<div>
+<div class="MathJax_Preview">\begin{bmatrix} 1 &amp; -2 \\ -2 &amp; 3\end{bmatrix}\begin{bmatrix} 2 \\ 3\end{bmatrix} = \begin{bmatrix} -4 \\ 5\end{bmatrix}</div>
+<script type="math/tex; mode=display">\begin{bmatrix} 1 & -2 \\ -2 & 3\end{bmatrix}\begin{bmatrix} 2 \\ 3\end{bmatrix} = \begin{bmatrix} -4 \\ 5\end{bmatrix}</script>
+</div>
+<p>Now, this is all well and good. But of course, many of the functions that you'll be confronted with, will be highly nonlinear, and generally much more complicated than the simple linear example we've just looked at here. However, often they may still be smooth, which means that if we zoom in close enough, we can consider each little region of space to be approximately linear and therefore, by adding up all the contributions from the Jacobian determinants at each point in space, we can still calculate the change in the size of a region after transformation.</p>
+<p>A classic example of this occurs when transforming between cartesian and polar coordinate systems. If we have a vector expressed in terms of a radius <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>, and the angle up from the x-axis is theta, but we'd like them expressed in terms of <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> instead. We can write the following expressions just by thinking about trigonometry</p>
+<p><img alt="" src="../../img/jacobians_8.png" /></p>
+<p>Now, we can build the Jacobian matrix and take its determinant. The fact that the result is simply the radius <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>, and not the function <span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>, tells us that as we move along <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>, away from the origin, small regions of space will scale as a function of <span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>, which I hope will make a lot of sense to you when we look at our little animation here</p>
+<p><img alt="" src="../../img/jacobians_4.gif" /></p>
+<h4 id="conclusions_3">Conclusions</h4>
+<p>That's all for this video. I hope you will now be able to build Jacobian vectors and matrices for yourself, with confidence in the exercises. And more importantly, that your intuition on the meaning of this concept, is starting to develop. See you next time.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../week_1/" title="Week 1" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Week 1
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/JohnGiorgi" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
